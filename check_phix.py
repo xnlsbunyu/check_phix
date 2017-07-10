@@ -24,7 +24,7 @@ def main():
 
     #find mapped reads in sam file
     print ("Unmapped reads number is ......")
-    os.system("awk '/\*/' tem.sam | wc -l")
+    os.system("awk '{if ($3 ~ /\*/) print}' tem.sam | wc -l")
     os.system("rm phix174.fasta")
     os.system("rm phix*")
     os.system("rm tem.sam")
