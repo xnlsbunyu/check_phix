@@ -8,7 +8,7 @@ def main():
     forward = sys.argv[1]
 
     print("Downloading current release of s288c reference genome")
-    os.system("curl http://downloads.yeastgenome.org/sequence/S288C_reference/genome_releases/S288C_reference_genome_Current_Release.tgz")
+    os.system("curl http://downloads.yeastgenome.org/sequence/S288C_reference/genome_releases/S288C_reference_genome_Current_Release.tgz > S288C_reference_genome_Current_Release.tar")
     os.system("tar zxvf S288C_reference_genome_Current_Release.tar")
     os.chdir("S288C_reference_genome_R64-2-1_20150113")
     os.system("cp S288C_reference_sequence_R64-2-1_20150113.fsa ..")
