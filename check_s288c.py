@@ -6,6 +6,7 @@ import os
 
 def main():
     forward = sys.argv[1]
+<<<<<<< HEAD
 #Check whether reference genome exists or not   
     if os.path.isfile("S288C_reference_genome_Current_Release.tgz"):
         print("Reference genome is available!")
@@ -13,6 +14,12 @@ def main():
         print("Downloading current release of s288c reference genome")
         os.system("curl -OL http://downloads.yeastgenome.org/sequence/S288C_reference/genome_releases/S288C_reference_genome_Current_Release.tgz > S288C_reference_genome_Current_Release.tgz")
     os.system("tar xvzf S288C_reference_genome_Current_Release.tgz")
+=======
+
+    print("Downloading current release of s288c reference genome")
+    os.system("curl http://downloads.yeastgenome.org/sequence/S288C_reference/genome_releases/S288C_reference_genome_Current_Release.tgz > S288C_reference_genome_Current_Release.tar")
+    os.system("tar zxvf S288C_reference_genome_Current_Release.tar")
+>>>>>>> edd9e9d9e73b2a91ccee565934937b3c2dc417db
     os.chdir("S288C_reference_genome_R64-2-1_20150113")
     os.system("cp S288C_reference_sequence_R64-2-1_20150113.fsa ..")
     os.chdir("..")
